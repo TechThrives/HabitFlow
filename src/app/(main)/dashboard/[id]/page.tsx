@@ -159,7 +159,7 @@ export const HabitDetails: React.FC = () => {
 
       <button
         onClick={() => router.push("/dashboard")}
-        className="flex items-center justify-center gap-2 px-4 py-2 bg-primary hover:bg-primary/80 rounded-lg transition-colors text-sm font-medium ml-auto"
+        className="flex items-center justify-center gap-2 px-4 py-2 text-white bg-primary hover:bg-primary/80 rounded-lg transition-colors text-sm font-medium ml-auto"
       >
         Back
       </button>

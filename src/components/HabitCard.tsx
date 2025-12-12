@@ -31,7 +31,7 @@ export const HabitCard: React.FC<HabitCardProps> = ({ habit, entries, onToggle }
   const getButtonColor = () => {
     if (todayEntry?.status === "completed") return "bg-green-500 border-green-500";
     if (todayEntry?.status === "skipped") return "bg-red-500 border-red-500";
-    return "bg-transparent border-muted-foreground/30 hover:border-primary/50";
+    return "bg-transparent border-muted-foreground/30 hover:border-primary/50 disabled:opacity-50 disabled:cursor-not-allowed";
   };
 
   const getScheduleLabel = () => {
@@ -85,6 +85,7 @@ export const HabitCard: React.FC<HabitCardProps> = ({ habit, entries, onToggle }
       </div>
 
       <button
+        disabled={habit.startDate > today}
         onClick={handleToggle}
         className={`w-12 h-12 rounded-full border-2 flex items-center justify-center transition-all duration-300 active:scale-90 ${getButtonColor()}`}
         title="Toggle status"
